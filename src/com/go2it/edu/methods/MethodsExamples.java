@@ -1,4 +1,4 @@
-package com.go2it.edu.methods.methods;
+package com.go2it.edu.methods;
 
 /**
  * @author Alex Ryzhkov

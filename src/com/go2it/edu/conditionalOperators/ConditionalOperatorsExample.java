@@ -1,5 +1,7 @@
 package com.go2it.edu.conditionalOperators;
 
+import com.go2it.edu.enums.EnumExample;
+
 /**
  * @author Alex Ryzhkov
  */

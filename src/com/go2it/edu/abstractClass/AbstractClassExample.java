@@ -10,9 +10,9 @@ public class AbstractClassExample {
 		rbcBank.addFundsToSumToOperate(33);
 		rbcBank.investFunds(70);
 
-		CoverLosses aaaInsurance= new InsuranceCompany();
-//		aaaInsurance.addFundsToSumToOperate(150);
-//		aaaInsurance.addFundsToSumToOperate(66);
+		InsuranceCompany aaaInsurance= new InsuranceCompany();
+		aaaInsurance.addFundsToSumToOperate(150);
+		aaaInsurance.addFundsToSumToOperate(66);
 //		aaaInsurance.investFunds(70);
 		aaaInsurance.coverClientLoses("Vasya", 100000);
 	}

@@ -3,7 +3,7 @@ package com.go2it.edu.abstractClass;
 /**
  * @author Alex Ryzhkov
  */
-public class CreditUnion extends FinancialInstitution {
+public class CreditUnion extends FinancialInstitution implements PrivatePersonFinancing {
 	private int numberOfMembers;
 
 	public CreditUnion() {
@@ -26,5 +26,11 @@ public class CreditUnion extends FinancialInstitution {
 		double result = fundsToInvest + fundsToInvest * 0.07;
 		System.out.println("Result of investments is - " + result);
 		return result;
+	}
+
+	@Override
+	public double creditPerson(String name) {
+		System.out.println(name + " was credited with $50");
+		return 50;
 	}
 }

@@ -3,7 +3,7 @@ package com.go2it.edu.abstractClass;
 /**
  * @author Alex Ryzhkov
  */
-public class InsuranceCompany extends FinancialInstitution {
+public class InsuranceCompany extends FinancialInstitution implements CoverLosses{
 	private int numberOfInsuredCustomers;
 	private double totalSumOfInsurancePayments;
 
@@ -38,5 +38,16 @@ public class InsuranceCompany extends FinancialInstitution {
 		double result = fundsToInvest + fundsToInvest * 0.05;
 		System.out.println("Result of investments is - " + result);
 		return result;
+	}
+
+	@Override
+	public double coverLoses(String nameOfCustomer, double sumToCover) {
+		if (sumToCover > getSumToOperate()) {
+			System.out.println(nameOfCustomer + " will get only " + (getSumToOperate() - 100));
+			return getSumToOperate() - 100;
+		} else {
+			System.out.println(nameOfCustomer + " will get " + sumToCover);
+			return sumToCover;
+		}
 	}
 }

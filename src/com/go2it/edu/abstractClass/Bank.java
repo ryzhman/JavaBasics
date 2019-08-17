@@ -3,7 +3,7 @@ package com.go2it.edu.abstractClass;
 /**
  * @author Alex Ryzhkov
  */
-public class Bank extends FinancialInstitution {
+public class Bank extends FinancialInstitution implements PrivatePersonFinancing {
 	private String ownerName;
 	private int numberOfBranches;
 	private boolean isInternational;
@@ -48,5 +48,11 @@ public class Bank extends FinancialInstitution {
 		double result = fundsToInvest + fundsToInvest * 0.1;
 		System.out.println("Result of investments is - " + result);
 		return result;
+	}
+
+	@Override
+	public double creditPerson(String name) {
+		System.out.println(name + " was credited with $1000");
+		return 1000;
 	}
 }

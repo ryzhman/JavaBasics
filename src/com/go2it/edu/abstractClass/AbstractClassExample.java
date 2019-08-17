@@ -14,7 +14,7 @@ public class AbstractClassExample {
 //		aaaInsurance.addFundsToSumToOperate(150);
 //		aaaInsurance.addFundsToSumToOperate(66);
 //		aaaInsurance.investFunds(70);
-		aaaInsurance.coverLoses("Vasya", 100000);
+		aaaInsurance.coverClientLoses("Vasya", 100000);
 	}
 
 }

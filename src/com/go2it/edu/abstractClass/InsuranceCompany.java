@@ -41,13 +41,23 @@ public class InsuranceCompany extends FinancialInstitution implements CoverLosse
 	}
 
 	@Override
-	public double coverLoses(String nameOfCustomer, double sumToCover) {
-		if (sumToCover > getSumToOperate()) {
-			System.out.println(nameOfCustomer + " will get only " + (getSumToOperate() - 100));
-			return getSumToOperate() - 100;
+	public double coverClientLoses(String nameOfCustomer, double requestedSumToCover) {
+		double availableSum = getSumToOperate();
+		if (requestedSumToCover > availableSum) {
+			//calculate the sum that we can pay to customer without the risk of going bankrupt
+			double sumToPayToCustomer = availableSum - 100;
+			System.out.println(nameOfCustomer + " will get only " + sumToPayToCustomer);
+
+			//before paying off loses to the customer, we need to update our balance with a new value
+			setSumToOperate(availableSum - sumToPayToCustomer);
+
+			return sumToPayToCustomer;
 		} else {
-			System.out.println(nameOfCustomer + " will get " + sumToCover);
-			return sumToCover;
+			System.out.println(nameOfCustomer + " will get " + requestedSumToCover);
+
+			//before paying off loses to the customer, we need to update our balance with a new value
+			setSumToOperate(availableSum - requestedSumToCover);
+			return requestedSumToCover;
 		}
 	}
 }

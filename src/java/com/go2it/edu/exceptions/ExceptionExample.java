@@ -18,8 +18,8 @@ public class ExceptionExample {
 				System.out.println("It will not be executed");
 			} catch (IllegalArgumentException e) {
 				System.out.println("Oops! Exception was thrown: " + e.getMessage());
-			} catch (FileNotFoundException e) {
-				System.out.println("It was FileNotFoundException!");
+//			} catch (FileNotFoundException e) {
+//				System.out.println("It was FileNotFoundException!");
 			} catch (IOException e) {
 				System.out.println("Some log");
 			} catch (Exception e) {
